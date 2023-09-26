@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <center>
+        <div style="width:300px; border:2px; border-style:solid;padding:10px; text-align:left;">
+            <label for="firstnum">1st Number:</label>
+            <input type="text" id="firstnum" />
+            <br><br>
+            <label for="secondnum">2nd Number:</label>
+            <input type="text" id="secondnum" />
+            <br><br>
+            <div style="text-align:left">
+                <button onclick="multiply()">Multiply</button>
+                <button onclick="divide()">Divide</button>
+            </div>
+            <p id="result"></p>
+
+        </div>
+    </center>
+    <script>
+        function multiply() {
+            var i1 = document.getElementById("firstnum").value;
+            var a = Number.parseFloat(i1);
+            var i2 = document.getElementById("secondnum").value;
+            var b = Number.parseFloat(i2);
+            var prod = a * b;
+            document.getElementById("result").innerHTML = "Result: " + prod;
+        }
+
+        function divide() {
+            var i1 = document.getElementById("firstnum").value;
+            var a = Number.parseFloat(i1);
+            var i2 = document.getElementById("secondnum").value;
+            var b = Number.parseFloat(i2);
+            var div = a / b;
+            document.getElementById("result").innerHTML = "Result: " + div;
+        }
+    </script>
+</body>
+</html>

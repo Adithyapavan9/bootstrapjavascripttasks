@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showDate()">Show Date</button>
+    <button onclick="showTime()">Show Time</button>
+    <p id="demo"></p>
+
+    <script>
+        function showDate() {
+            const date = new Date();
+            const year = date.getUTCFullYear();
+            const month = date.getUTCMonth() + 1;
+            const day = date.getUTCDate();
+            const withSlashes = [year, month, day].join('/');
+            document.getElementById("demo").innerHTML = ' ' + withSlashes;
+        }
+
+        function showTime() {
+            const date = new Date();
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const seconds = date.getSeconds();
+            const timeString = [hours, minutes, seconds].map(num => num.toString().padStart(2, '0')).join(':');
+            document.getElementById("demo").innerHTML = `${date.toDateString()} ${timeString} GMT+0530 (India Standard Time)`;
+        }
+    </script>
+</body>
+</html>
